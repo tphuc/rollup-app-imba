@@ -1,5 +1,6 @@
-import {vbox, completed} from './styles/index.css'
+import { vbox, completed } from './styles/index.css'
 import { List } from './item-list'
+import { Home } from './pages/Home/home'
 
 var store = {
 	title: ""
@@ -12,15 +13,9 @@ var store = {
 }
 
 tag App
-	def addItem
-		data:items.push(title: data:title)
-		data:title = ""
-
 	def render
-		<self.{vbox}>
-			<header>
-				<input[data:title] placeholder="New..." :keyup.enter.addItem>
-				<button :tap.addItem> 'Add item'
-			<List list=data:items>
+		<self>
+			<Home>
 
-Imba.mount <App[store]>
+
+Imba.mount <App>
